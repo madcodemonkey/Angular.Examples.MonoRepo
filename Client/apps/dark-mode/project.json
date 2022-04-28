@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "root": "apps/dark-mode",
+  "sourceRoot": "apps/dark-mode/src",
+  "prefix": "yates",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/dark-mode",
+        "index": "apps/dark-mode/src/index.html",
+        "main": "apps/dark-mode/src/main.ts",
+        "polyfills": "apps/dark-mode/src/polyfills.ts",
+        "tsConfig": "apps/dark-mode/tsconfig.app.json",
+        "assets": [
+          "apps/dark-mode/src/favicon.ico",
+          "apps/dark-mode/src/assets"
+        ],
+        "styles": ["apps/dark-mode/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/dark-mode/src/environments/environment.ts",
+              "with": "apps/dark-mode/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "dark-mode:build:production"
+        },
+        "development": {
+          "browserTarget": "dark-mode:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "dark-mode:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/dark-mode/**/*.ts",
+          "apps/dark-mode/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/dark-mode"],
+      "options": {
+        "jestConfig": "apps/dark-mode/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

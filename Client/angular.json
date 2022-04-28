@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "dark-mode": "apps/dark-mode",
+    "dark-mode-e2e": "apps/dark-mode-e2e"
+  }
+}

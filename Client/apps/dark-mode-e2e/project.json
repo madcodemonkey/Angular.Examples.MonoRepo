@@ -1,0 +1,28 @@
+{
+  "root": "apps/dark-mode-e2e",
+  "sourceRoot": "apps/dark-mode-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/dark-mode-e2e/cypress.json",
+        "devServerTarget": "dark-mode:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "dark-mode:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dark-mode-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["dark-mode"]
+}
