@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/dark-mode",
   "sourceRoot": "apps/dark-mode/src",
   "prefix": "yates",
   "targets": {
@@ -13,11 +12,12 @@
         "main": "apps/dark-mode/src/main.ts",
         "polyfills": "apps/dark-mode/src/polyfills.ts",
         "tsConfig": "apps/dark-mode/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
         "assets": [
           "apps/dark-mode/src/favicon.ico",
           "apps/dark-mode/src/assets"
         ],
-        "styles": ["apps/dark-mode/src/styles.css"],
+        "styles": ["apps/dark-mode/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
