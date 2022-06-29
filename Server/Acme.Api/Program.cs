@@ -12,17 +12,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// const string CorsPolicyName = "AllowAll";
-// builder.Services.AddCors(options =>
-// {
-//     options.AddPolicy(CorsPolicyName,
-//         builder =>
-//         {
-//             builder.AllowAnyHeader();
-//             builder.AllowAnyMethod();
-//             builder.AllowAnyOrigin();
-//         });
-// });
+//const string CorsPolicyName = "AllowAll";
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(CorsPolicyName,
+//        builder =>
+//        {
+//            builder.AllowAnyHeader();
+//            builder.AllowAnyMethod();
+//            builder.AllowAnyOrigin();
+//        });
+//});
 
 
 var app = builder.Build();
@@ -39,6 +39,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// app.UseCors(CorsPolicyName);
 
 app.UseHttpsRedirection();
 

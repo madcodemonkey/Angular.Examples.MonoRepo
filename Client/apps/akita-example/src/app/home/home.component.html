@@ -1,0 +1,14 @@
+<div class="container">
+  <button class="add-todo-btn"
+    (click)="addToDo()"
+    mat-raised-button
+    color="primary">Add Todo</button>
+  <mat-spinner *ngIf="loading"></mat-spinner>
+  <ng-container *ngIf="!loading">
+    <mat-card *ngFor="let todo of todos">
+      <p  [ngClass]="{complete: todo.status === 'done'}" >{{todo.title}}</p>
+      <button *ngIf="todo.status ==='open'" (click)="markAsComplete(todo)" mat-stroked-button color="primary" >Mark as Complete</button>
+      <button *ngIf="todo.status ==='done'" (click)="deleteTodo(todo)" mat-stroked-button color="primary" >Delete</button>
+    </mat-card>
+  </ng-container>
+</div>
