@@ -11,9 +11,16 @@ In the Client folder, run this command:
 
 # Modules added outside the defaults that come with NxWorkspace
 - @datorama/akita
-  - akita-example
+  - Used by: akita-example
 - @angular/material  
-  - akita-example
+  - Used by: akita-example
+- ag-grid-community  (generic library for any JavaScript app) 
+  - CMD: npm install --save ag-grid-community
+  - Used by: ag-grid-example   
+- ag-grid-angular    (specific code for Angular) 
+  - CMD: npm install --save ag-grid-angular
+  - Used by: ag-grid-example   
+  
   
 Install packages like you would in any normal Angular application.
 npm install @datorama/akita

@@ -1,0 +1,97 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/ag-grid-example/src",
+  "prefix": "yates",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/ag-grid-example",
+        "index": "apps/ag-grid-example/src/index.html",
+        "main": "apps/ag-grid-example/src/main.ts",
+        "polyfills": "apps/ag-grid-example/src/polyfills.ts",
+        "tsConfig": "apps/ag-grid-example/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/ag-grid-example/src/favicon.ico",
+          "apps/ag-grid-example/src/assets"
+        ],
+        "styles": ["apps/ag-grid-example/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ag-grid-example/src/environments/environment.ts",
+              "with": "apps/ag-grid-example/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ag-grid-example:build:production"
+        },
+        "development": {
+          "browserTarget": "ag-grid-example:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "publicHost": "http://0.0.0.0:4200",
+        "proxyConfig": "apps/ag-grid-example/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ag-grid-example:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ag-grid-example/**/*.ts",
+          "apps/ag-grid-example/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/ag-grid-example"],
+      "options": {
+        "jestConfig": "apps/ag-grid-example/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

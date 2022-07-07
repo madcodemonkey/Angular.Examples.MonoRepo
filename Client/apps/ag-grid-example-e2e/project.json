@@ -1,0 +1,28 @@
+{
+  "$schema": "..\\..\\node_modules\\nx\\schemas\\project-schema.json",
+  "sourceRoot": "apps/ag-grid-example-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/ag-grid-example-e2e/cypress.json",
+        "devServerTarget": "ag-grid-example:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "ag-grid-example:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/ag-grid-example-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["ag-grid-example"]
+}

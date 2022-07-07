@@ -1,0 +1,11 @@
+ <input type="text" [formControl]="search" placeholder="Search">
+
+ <ag-grid-angular
+    class="ag-theme-alpine"
+    style="height: 500px; width: 1000px"
+    [rowData]="rowData"
+    [columnDefs]="colDefs"
+    [defaultColDef]="defaultColDef"
+  >
+ </ag-grid-angular>
+<router-outlet></router-outlet>

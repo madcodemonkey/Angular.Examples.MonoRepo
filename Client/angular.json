@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "ag-grid-example": "apps/ag-grid-example",
+    "ag-grid-example-e2e": "apps/ag-grid-example-e2e",
     "akita-example": "apps/akita-example",
     "akita-example-e2e": "apps/akita-example-e2e",
     "dark-mode": "apps/dark-mode",
