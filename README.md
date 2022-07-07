@@ -8,6 +8,7 @@ Run this command ```nx graph``` in the client directory ([see also](https://nx.d
 In the Client folder, run this command:
 - Dark Mode - ```nx run dark-mode:serve:development --watch```  or ```nx serve dark-mode```
 - Akita Example ```nx run akita-example:serve:development --watch```  or ```nx serve akita-example```
+- AG Grid Example ```nx serve ag-grid-example```
 
 # Modules added outside the defaults that come with NxWorkspace
 - @datorama/akita
