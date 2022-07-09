@@ -13,11 +13,11 @@ In the Client folder, run one of these commands:
    - Requires server?  Yes, you'll also need to run the server project
    - Run it: ```nx run ag-grid-example:serve:development --watch```  or```nx serve ag-grid-example```
 - akita-example 
-   - What:  Demostrates using Akita state management
+   - What:  Demostrates using [Akita state management](https://opensource.salesforce.com/akita/docs/store)
    - Requires server?  Yes, you'll also need to run the server project
    - Run it: ```nx run akita-example:serve:development --watch```  or ```nx serve akita-example```
 - dark-mode 
-   - What: Demostrates switching between light and dark mode using CSS variables
+   - What: Demostrates switching between light and dark mode using [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
    - Requires server?  No
    - Run it: ```nx run dark-mode:serve:development --watch```  or ```nx serve dark-mode```
 
