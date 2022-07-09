@@ -1,24 +1,29 @@
 # Angular.Examples.MonoRepo
 ---
-This is a mono-repo containing several Angular applications, but sharing one node modules folder.
+This is a mono-repo containing several Angular applications, but sharing one node modules folder.  For info about the mono-repo used in these examples see [Nx Workspace](https://nx.dev/).  The command to run each example is below in "Running a project" section.
 
-For info about the mono-repo used in these examples see [Nx Workspace](https://nx.dev/).  The command to run each example is below.
-
-# Things to do before running projects
+# Running a project
 ---
 In the client folder run the following command to install the necessary packages:
 ```npm install```
 
-# Projects you can run
----
 In the Client folder, run one of these commands:
-- Dark Mode - ```nx run dark-mode:serve:development --watch```  or ```nx serve dark-mode```
-- Akita Example ```nx run akita-example:serve:development --watch```  or ```nx serve akita-example```
-- AG Grid Example ```nx serve ag-grid-example```
+- ag-grid-example
+   - What: Demostrates basic usage of the of the [Ag Grid component](https://www.ag-grid.com/)
+   - Requires server?  Yes, you'll also need to run the server project
+   - Run it: ```nx run ag-grid-example:serve:development --watch```  or```nx serve ag-grid-example```
+- akita-example 
+   - What:  Demostrates using Akita state management
+   - Requires server?  Yes, you'll also need to run the server project
+   - Run it: ```nx run akita-example:serve:development --watch```  or ```nx serve akita-example```
+- dark-mode 
+   - What: Demostrates switching between light and dark mode using CSS variables
+   - Requires server?  No
+   - Run it: ```nx run dark-mode:serve:development --watch```  or ```nx serve dark-mode```
 
-# Create new projects
+# Creating a new project
 ---
-I had to execute the two commands listed [here](https://nx.dev/packages/angular#setting-up-the-angular-plugin) and [here](https://nx.dev/packages/angular#generating-a-library) in the project folder (the one where the package.json and angular.json live):
+I had to execute the two commands listed [here](https://nx.dev/packages/angular#setting-up-the-angular-plugin) and [here](https://nx.dev/packages/angular#generating-a-library) in the main folder (the one where the package.json and angular.json live):
 1. ```npm install -D @nrwl/angular```
 2. ```nx g @nrwl/angular:app appName```
 
