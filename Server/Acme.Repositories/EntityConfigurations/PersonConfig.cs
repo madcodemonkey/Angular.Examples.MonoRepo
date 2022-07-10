@@ -21,6 +21,11 @@ public class PersonConfig : IEntityTypeConfiguration<Person>
         builder.Property(t => t.StateId);
         builder.Property(t => t.PostalCode);
 
+        builder.HasOne(o => o.Country)
+            .WithMany()
+            .HasForeignKey(fk => fk.CountryId)
+            .OnDelete(DeleteBehavior.NoAction);
+
         builder.HasOne(o => o.State)
             .WithMany()
             .HasForeignKey(fk => fk.StateId);

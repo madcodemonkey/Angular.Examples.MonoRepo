@@ -73,14 +73,14 @@ public class StateConfig : IEntityTypeConfiguration<State>
         builder.HasData(new State { Id = 52, CountryId = 1, Name = "Wyoming", Abreviation = "WY" });
         
         builder.HasData(new State { Id = 53, CountryId = 2, Name = "Alberta", Abreviation = "AB" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "British Columbia", Abreviation = "BC" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Manitoba", Abreviation = "MB" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "New Brunswick", Abreviation = "NB" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Newfoundland and Labrador", Abreviation = "NL" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Nova Scotia", Abreviation = "NS" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Ontario", Abreviation = "ON" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Prince Edward Island", Abreviation = "PE" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Quebec", Abreviation = "QC" });
-        builder.HasData(new State { Id = 53, CountryId = 2, Name = "Saskatchewan", Abreviation = "SK" });
+        builder.HasData(new State { Id = 54, CountryId = 2, Name = "British Columbia", Abreviation = "BC" });
+        builder.HasData(new State { Id = 55, CountryId = 2, Name = "Manitoba", Abreviation = "MB" });
+        builder.HasData(new State { Id = 56, CountryId = 2, Name = "New Brunswick", Abreviation = "NB" });
+        builder.HasData(new State { Id = 57, CountryId = 2, Name = "Newfoundland and Labrador", Abreviation = "NL" });
+        builder.HasData(new State { Id = 58, CountryId = 2, Name = "Nova Scotia", Abreviation = "NS" });
+        builder.HasData(new State { Id = 59, CountryId = 2, Name = "Ontario", Abreviation = "ON" });
+        builder.HasData(new State { Id = 60, CountryId = 2, Name = "Prince Edward Island", Abreviation = "PE" });
+        builder.HasData(new State { Id = 61, CountryId = 2, Name = "Quebec", Abreviation = "QC" });
+        builder.HasData(new State { Id = 62, CountryId = 2, Name = "Saskatchewan", Abreviation = "SK" });
     }
 }
