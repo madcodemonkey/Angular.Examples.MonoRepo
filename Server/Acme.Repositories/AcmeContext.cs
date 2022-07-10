@@ -10,6 +10,9 @@ namespace Acme.Repositories
         {
         }
 
+        public DbSet<Country> Counties { get; set; }
+        public DbSet<Person> People { get; set; }
+        public DbSet<State> States { get; set; }
         public DbSet<TodoItem> Todos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

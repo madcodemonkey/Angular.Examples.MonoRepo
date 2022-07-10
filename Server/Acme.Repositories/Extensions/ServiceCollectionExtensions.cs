@@ -20,6 +20,9 @@ public static class ServiceCollectionExtensions
             });
         });
 
+        services.AddScoped<ICountryRepository, CountryRepository>();
+        services.AddScoped<IPersonRepository, PersonRepository>();
+        services.AddScoped<IStateRepository, StateRepository>();
         services.AddScoped<ITodoItemRepository, TodoItemRepository>();
         
         return services;
