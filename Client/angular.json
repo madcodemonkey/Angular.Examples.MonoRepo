@@ -7,6 +7,8 @@
     "akita-example": "apps/akita-example",
     "akita-example-e2e": "apps/akita-example-e2e",
     "dark-mode": "apps/dark-mode",
-    "dark-mode-e2e": "apps/dark-mode-e2e"
+    "dark-mode-e2e": "apps/dark-mode-e2e",
+    "simple-examples": "apps/simple-examples",
+    "simple-examples-e2e": "apps/simple-examples-e2e"
   }
 }
