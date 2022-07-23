@@ -1,1 +1,32 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1 routerLink="/">Simple Examples</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button routerLink="/download">Download</a>
+      <a mat-button [matMenuTriggerFor]="menu">Form Validation</a>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/validation/template-forms/simple1/2">Template Forms: Simple 1</a>
+        <a mat-menu-item routerLink="/validation/reactive-forms/simple1/2">Template Reactive: Simple 1</a>
+      </mat-menu>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/download">Download</a>
+
+      <a mat-list-item [matMenuTriggerFor]="menu">Form Validation</a>
+      <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
