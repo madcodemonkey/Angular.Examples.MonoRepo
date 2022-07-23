@@ -1,0 +1,95 @@
+<h1>Reactive Form Validation Example 1</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="createPerson()">Create New Person</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="updatePerson(1)">Load Bob Hope</button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="person">
+    <h4>Description</h4>
+
+
+    <form id='editForm' [formGroup]="editForm2" class="form-floating" (ngSubmit)="updateMember()" novalidate>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="firstName">First Name: </label>
+          <input formControlName="firstName" required minlength="2" pattern="^[a-zA-Z]+$" id="firstName" type="text"
+            class="form-control">
+          <!-- <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert">
+            <div *ngIf="firstName.errors?.['required']">
+              Name is required.
+            </div>
+            <div *ngIf="firstName.errors?.['minlength']">
+              Name must be at least 2 characters long.
+            </div>
+            <div *ngIf="firstName.errors?.['forbiddenName']">
+              Name cannot be Bob.
+            </div>
+          </div> -->
+        </div>
+        <div class="col">
+          <label for="lastName">Last Name: </label>
+          <input formControlName="lastName" type="text" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input formControlName="email" required type="text" name="email" required email class="form-control mx-2">
+        <!-- <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error">
+          <div *ngIf="email.errors?.['required']">
+            Email is required
+          </div>
+          <div *ngIf="email.errors?.['email']">
+            Invalid Email Address
+          </div>
+        </div> -->
+      </div>
+
+      <div class="form-group">
+        <label for="dateOfBirth">DOB: </label>
+        <input formControlName="dateOfBirth" type="date" class="form-control mx-2">
+      </div>
+      <h4 class="mt-2">Address: </h4>
+      <div class="form-inline">
+        <label for="addressLine1">Line 1:</label>
+        <input formControlName="addressLine1" type="text" class="form-control mx-2">
+        <label for="addressLine2">Line 2:</label>
+        <input formControlName="addressLine2" type="text" class="form-control mx-2">
+        <label for="city">City: </label>
+        <input formControlName="city" type="text" class="form-control mx-2">
+        <label for="state">State: </label>
+        <input formControlName="state" type="text" class="form-control mx-2">
+        <label for="postalCode">Postal Code: </label>
+        <input formControlName="postalCode" type="text" class="form-control mx-2">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="false">Submit</button>
+    </form>
+
+    <p>
+      Form Value: {{ editForm2.value | json }}
+    </p>
+    <p>
+      Form Status: {{ editForm2.status | json }}
+    </p>
+  </ng-container>
+
+  <div class="row">
+    <button class="btn btn-success" routerLink="/">Back to home</button>
+  </div>
+
+</div>
+
+
+<h3>Notes</h3>
+<ul>
+  <li>You need to add FormsModule from @angular/forms to your imports in app.module.ts</li>
+  <li>The Built-in validators use the HTML5 validation attributes like required, minlength, maxlength & pattern. </li>
+</ul>
+
+

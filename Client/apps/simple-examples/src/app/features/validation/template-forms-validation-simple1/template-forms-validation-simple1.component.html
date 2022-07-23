@@ -1,0 +1,92 @@
+<h1>Template Form Validation Example 1</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="createPerson()">Create New Person</button>
+    </div>
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="updatePerson(1)">Load Bob Hope</button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="person">
+    <h4>Description</h4>
+    <form id="editForm" #editForm="ngForm" class="form-floating" (ngSubmit)="updateMember()" novalidate>
+
+      <div class="form-row">
+        <div class="col">
+          <label for="firstName">First Name: </label>
+          <input required minlength="2" appForbiddenName="bob" pattern="^[a-zA-Z]+$" id="firstName" type="text"
+            name="firstName" class="form-control" [(ngModel)]="person.firstName" #firstName="ngModel">
+          <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert">
+            <div *ngIf="firstName.errors?.['required']">
+              Name is required.
+            </div>
+            <div *ngIf="firstName.errors?.['minlength']">
+              Name must be at least 2 characters long.
+            </div>
+            <div *ngIf="firstName.errors?.['forbiddenName']">
+              Name cannot be Bob.
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <label for="lastName">Last Name: </label>
+          <input [(ngModel)]="person.lastName" type="text" name="lastName" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <input [(ngModel)]="person.email" required #email="ngModel" type="text" name="email" required email
+          class="form-control mx-2">
+        <div *ngIf="!email?.valid && (email?.dirty || email?.touched)" class="error">
+          <div *ngIf="email.errors?.['required']">
+            Email is required
+          </div>
+          <div *ngIf="email.errors?.['email']">
+            Invalid Email Address
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dateOfBirth">DOB: </label>
+        <input [(ngModel)]="person.dateOfBirth" type="date" name="dateOfBirth" class="form-control mx-2">
+      </div>
+      <h4 class="mt-2">Address: </h4>
+      <div class="form-inline">
+        <label for="addressLine1">Line 1:</label>
+        <input [(ngModel)]="person.addressLine1" type="text" name="addressLine1" class="form-control mx-2">
+        <label for="addressLine2">Line 2:</label>
+        <input [(ngModel)]="person.addressLine2" type="text" name="addressLine2" class="form-control mx-2">
+        <label for="city">City: </label>
+        <input [(ngModel)]="person.city" type="text" name="city" class="form-control mx-2">
+        <label for="country">State: </label>
+        <input [(ngModel)]="person.state" type="text" name="country" class="form-control mx-2">
+        <label for="postalCode">Postal Code: </label>
+        <input [(ngModel)]="person.postalCode" type="text" name="postalCode" class="form-control mx-2">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">Submit</button>
+    </form>
+
+    <p>
+      Form Value: {{ editForm.value | json }}
+    </p>
+    <p>
+      Form Status: {{ editForm.status | json }}
+    </p>
+  </ng-container>
+
+  <div class="row">
+    <button class="btn btn-success" routerLink="/">Back to home</button>
+  </div>
+
+</div>
+
+
+<h3>Notes</h3>
+<ul>
+  <li>You need to add FormsModule from @angular/forms to your imports in app.module.ts</li>
+  <li>The Built-in validators use the HTML5 validation attributes like required, minlength, maxlength & pattern. </li>
+</ul>

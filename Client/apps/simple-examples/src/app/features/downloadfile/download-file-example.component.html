@@ -1,0 +1,21 @@
+<div class="flex-grid">
+  <div>
+    <h1>Download</h1>
+  </div>
+  <div>
+    <p>Click the button to download a zip file from the server!</p>
+  </div>
+  <div>
+    <button  mat-stroked-button (click)="downloadIt1()" >
+      Download file and let the server specify the file name in the header.
+    </button>
+  </div>
+  <div>
+    <button mat-stroked-button (click)="downloadIt2()" >
+      Download file and let the client specify the file name in the code.
+    </button>
+  </div>
+  <div>
+    <button mat-stroked-button routerLink="/">Back to home</button>
+  </div>
+</div>
