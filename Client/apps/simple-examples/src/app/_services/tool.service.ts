@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { Observable } from 'rxjs';
 export class ToolService {
   baseUrl = '/api';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private snackBar: MatSnackBar) { }
 
   /**
    * This shows an example of pulling the file name out of the header so that the user can specify it.
@@ -25,6 +27,10 @@ export class ToolService {
           const contentDisposition = resp.headers.get('content-disposition');
           const filename = contentDisposition !== null ? contentDisposition.split(';')[1].split('filename')[1].split('=')[1].trim() : 'unknown.zip';
           console.log(filename);
+          this.snackBar.open('File downloaded.', '', {
+            duration: 3000
+          });
+
 
           if (resp.body !== null) this.downloadFile(resp.body, filename)
         });

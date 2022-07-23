@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +25,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatMenuModule,
     MatCardModule,
     MatInputModule,
+    MatSliderModule,
     MatSnackBarModule
   ],
   exports: [
@@ -36,6 +38,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatMenuModule,
     MatCardModule,
     MatInputModule,
+    MatSliderModule,
     MatSnackBarModule
   ],
 })
