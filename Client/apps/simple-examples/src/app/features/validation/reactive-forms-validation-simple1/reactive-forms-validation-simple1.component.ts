@@ -2,8 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { take } from 'rxjs';
-import { LookupItem } from '../../../_models/lookupItem.model';
 import { Person } from '../../../_models/person.model';
+import { State } from '../../../_models/state.model';
 import { PeopleService } from '../../../_services/people.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { PeopleService } from '../../../_services/people.service';
 })
 export class ReactiveFormsValidationSimple1Component implements OnInit {
   person: Person | null = null;
-  stateList: LookupItem[] = [];
+  stateList: State[] = [];
   editForm2!: FormGroup;
 
   @HostListener('window:beforeunload', ['$event']) unloadNotification($event: any) {

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DownloadFileExampleComponent } from './features/downloadfile/download-file-example.component';
+import { CascadeDropdownListComponent } from './features/dropdown/cascade-dropdown-list/cascade-dropdown-list.component';
 import { HomeComponent } from './features/home/home.component';
 import { ReactiveFormsValidationSimple1Component } from './features/validation/reactive-forms-validation-simple1/reactive-forms-validation-simple1.component';
 import { TemplateFormsValidationSimple1Component } from './features/validation/template-forms-validation-simple1/template-forms-validation-simple1.component';
@@ -10,6 +11,15 @@ import { StateListResolver } from './_resolvers/state-list.resolver';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'download', component: DownloadFileExampleComponent },
+  {
+    path: 'dropdown',
+    children: [
+      { path: 'cascade1', component: CascadeDropdownListComponent,
+        // resolve: {states: StateListResolver},
+        // canDeactivate: [PreventUnsavedChangesFormExampleGuard]
+      }
+    ],
+  },
   {
     path: 'validation',
     children: [

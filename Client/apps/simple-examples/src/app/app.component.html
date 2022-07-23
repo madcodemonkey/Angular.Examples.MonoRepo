@@ -7,11 +7,17 @@
     <span class="menu-spacer"></span>
     <div>
       <a mat-button routerLink="/download">Download</a>
+      <a mat-button [matMenuTriggerFor]="menu1">Dropdown</a>
+      <mat-menu #menu1="matMenu">
+        <a mat-menu-item routerLink="/dropdown/cascade1">Cascading dropdown example 1</a>
+      </mat-menu>
+
       <a mat-button [matMenuTriggerFor]="menu">Form Validation</a>
       <mat-menu #menu="matMenu">
         <a mat-menu-item routerLink="/validation/template-forms/simple1/2">Template Forms: Simple 1</a>
         <a mat-menu-item routerLink="/validation/reactive-forms/simple1/2">Template Reactive: Simple 1</a>
       </mat-menu>
+
     </div>
   </mat-toolbar-row>
 </mat-toolbar>

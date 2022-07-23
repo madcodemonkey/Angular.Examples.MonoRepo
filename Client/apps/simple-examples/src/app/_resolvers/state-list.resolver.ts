@@ -5,18 +5,18 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { LookupItem } from '../_models/lookupItem.model';
+import { State } from '../_models/state.model';
 import { StatesService } from '../_services/states.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class StateListResolver implements Resolve<LookupItem[]> {
+export class StateListResolver implements Resolve<State[]> {
 
   constructor(private stateSerivce : StatesService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot): Observable<LookupItem[]> {
+  resolve(route: ActivatedRouteSnapshot): Observable<State[]> {
     return this.stateSerivce.getAll();
   }
 }

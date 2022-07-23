@@ -1,0 +1,39 @@
+<p>Material controls</p>
+<div class="example-container">
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>Select a country</mat-label>
+      <mat-select name="country" [(ngModel)]="selectedCountryValue" (selectionChange)="onChangeCountry($event)">
+        <mat-option *ngFor="let country of countryList" [value]="country.id">
+          {{ country.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select a state</mat-label>
+      <mat-select name="state" [(ngModel)]="selectedStateValue">
+        <mat-option *ngFor="let state of stateList" [value]="state.id">
+          {{ state.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<hr>
+
+<p>Normal HTML controls</p>
+<select [(ngModel)]="selectedCountryValue" (change)="onChangeCountry($event.target)">
+  <option value="0">--select a country--</option>
+  <!-- Note the use of [ngValue] here instead of [value], which would work but it sets the value as a string whereas ngValue sets it as a number! -->
+  <option *ngFor="let country of countryList" [ngValue]="country.id">
+    {{ country.name }}
+  </option>
+</select>
+<br />
+<br />
+<select [(ngModel)]="selectedStateValue">
+  <option value="0">--select a state--</option>
+  <!-- Note the use of [ngValue] here instead of [value], which would work but it sets the value as a string whereas ngValue sets it as a number! -->
+  <option *ngFor="let state of stateList" [ngValue]="state.id">{{ state.name }}</option>
+</select>

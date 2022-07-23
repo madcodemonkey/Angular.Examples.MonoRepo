@@ -18,6 +18,11 @@ namespace Acme.Services
             return await _stateRepository.GetAsync();
         }
 
+        public async Task<List<State>> GetByCountryIdAsync(int countryId)
+        {
+            return await _stateRepository.GetByCountryIdAsync(countryId);
+        }
+
         public async Task<State> GetByIdAsync(int id)
         {
             return await _stateRepository.GetFirstOrDefaultAsync(w => w.Id == id);
@@ -49,5 +54,7 @@ namespace Acme.Services
         {
             await _stateRepository.DeleteAsync(id, true);
         }
+
+      
     }
 }

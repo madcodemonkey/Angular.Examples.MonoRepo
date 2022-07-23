@@ -22,6 +22,13 @@ public class StateController : ControllerBase
         return await  _stateService.GetAllAsync();
     }
 
+    // GET api/<StateController>/country/5
+    [HttpGet("country/{countryId}")]
+    public async Task<IEnumerable<State>> GetByCountryId(int countryId)
+    {
+        return await _stateService.GetByCountryIdAsync(countryId);
+    }
+
     // GET api/<StateController>/5
     [HttpGet("{id}")]
     public async Task<State> Get(int id)
