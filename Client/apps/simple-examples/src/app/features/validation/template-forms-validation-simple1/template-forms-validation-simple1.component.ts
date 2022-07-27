@@ -30,7 +30,7 @@ export class TemplateFormsValidationSimple1Component implements OnInit {
       this.stateList = data['states'];
     });
 
-    let id = +this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params['id'];
     this.updatePerson(id);
   }
 
@@ -46,6 +46,11 @@ export class TemplateFormsValidationSimple1Component implements OnInit {
   updatePerson(id: number) {
      if (id == undefined) id = 1;
      this.peopleService.getById(id).pipe(take(1)).subscribe(person => {
+     // if (person.dateOfBirth) {
+      ///  const dateAsString = new Date().toISOString().split('T')[0];
+       // person.dateOfBirth = new Date(dateAsString);
+//console.log(dateAsString);
+    //  }
        this.person = person;
        if (this.editForm){
         this.editForm.reset(person);

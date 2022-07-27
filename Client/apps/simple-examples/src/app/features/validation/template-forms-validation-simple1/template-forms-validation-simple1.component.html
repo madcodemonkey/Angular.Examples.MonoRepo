@@ -52,7 +52,7 @@
         </mat-grid-tile>
         <mat-grid-tile>
           <label for="dateOfBirth">DOB: </label>
-          <input [(ngModel)]="person.dateOfBirth" type="date" name="dateOfBirth" class="form-control mx-2">
+          <input [ngModel]="person.dateOfBirth | date:'yyyy-MM-dd'" (ngModelChange)="person.dateOfBirth  = $event" type="date" name="dateOfBirth" class="form-control mx-2">
         </mat-grid-tile>
 
         <!-- Row 3 -->
