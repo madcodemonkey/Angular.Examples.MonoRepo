@@ -20,10 +20,15 @@ In the Client folder, run one of these commands:
    - What: Demostrates switching between light and dark mode using [CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
    - Requires server?  No
    - Run it: ```nx run dark-mode:serve:development --watch```  or ```nx serve dark-mode```
-
+- simple-examples
+   - What: Miscellanous examples that show different simplier concepts
+   - Requires server?  Yes 
+   - Run it: ```nx run simple-examples:serve:development --watch```  or ```nx serve simple-examples```
+   
+   
 # Creating a new project
 ---
-I had to execute the two commands listed [here](https://nx.dev/packages/angular#setting-up-the-angular-plugin) and [here](https://nx.dev/packages/angular#generating-a-library) in the main folder (the one where the package.json and angular.json live):
+From the client directory, I had to execute the two commands listed [here](https://nx.dev/packages/angular#setting-up-the-angular-plugin) and [here](https://nx.dev/packages/angular#generating-a-library) in the main folder (the one where the package.json and angular.json live):
 1. ```npm install -D @nrwl/angular```
 2. ```nx g @nrwl/angular:app appName```
 
@@ -49,4 +54,24 @@ Outside the defaults that come with NxWorkspace, I've installed these packages:
 - ag-grid-angular    (specific code for Angular) 
   - CMD: npm install --save ag-grid-angular
   - Used by: ag-grid-example   
+
+  
+# Errors
+---
+## Error 1: More than one version of Angular found
+If you see this error
+Workspace config file cannot be loaded: <your path here>\Angular.Examples.MonoRepo\Client\angular.json
+Invalid format version detected - Expected:[ 1 ] Found: [ 2 ]
+
+
+# Creating from scratch
+---
+create-nx-workspace yates --preset=angular
+
+Run all the module installs again.
+
+# Upgrading notes
+---
+Be sure to delete node_modules folder
+Be sure to delete .angular directory
 
