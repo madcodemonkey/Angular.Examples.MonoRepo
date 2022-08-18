@@ -33,7 +33,6 @@ Afterwards, I changed directories into the ```apps``` and then ```appName``` and
 ```npm install -D @nrwl/angular```
 
 ## Relationships between projects
----
 Run this command ```nx graph``` in the client directory ([see also](https://nx.dev/using-nx/nx-cli#understanding-the-codebase)).
 
 ## Modules installed 
@@ -51,7 +50,7 @@ Outside the defaults that come with NxWorkspace, I've installed these packages:
   - CMD: npm install --save ag-grid-angular
   - Used by: ag-grid-example   
 
-  
+---  
 # Errors
 ## Error 1: More than one version of Angular found
 If you see this error
@@ -68,6 +67,6 @@ Run all the module installs again.
 Be sure to delete node_modules folder
 Be sure to delete .angular directory
 
-## Branching scheme
+# Branching scheme
 - Main branch: Angular 14 
 - [Future] I will create a branch for older Angular code
